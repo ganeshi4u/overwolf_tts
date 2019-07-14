@@ -1,0 +1,74 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent !important;
+}
+
+body {
+    font-family: "KlavikaWebBasicRegular", sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+}
+
+main {
+    color: #131313;
+    background-color: transparent;
+    position: relative;
+    width: 460px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+    overflow: visible;
+}
+
+.chat-log {
+	height: auto;
+	overflow: auto;
+}
+.chat-log__item {
+	background: transparent;
+	padding: 10px;
+	margin: 0 auto 20px;
+	max-width: 80%;
+	float: left;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+	clear: both;
+}
+
+.chat-form {
+    background-color: transparent;
+	bottom: 0;
+	width: 100%;
+}
+
+.chat-form.input {
+    font-weight: bold;
+    color: black;
+}
+
+input.form-control {
+    background-color: rgba(0,0,0,.075);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="../js/chatwindow.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Demo app</title>
+  </head>
+
+  <div class="content" onmousedown="dragMove();">
+    <body>
+      <main>
+        <div class="container ">
+          <div class="chat-log">
+            <div class="chat-log__item">
+              <div class="chat-log__message">Yo man</div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-form">
+          <div class="container ">
+            <form class="form-horizontal">
+              <div class="row">
+                <div class="col-12">
+                  <input type="text" class="form-control" id="msg" placeholder="Message" onkeydown="send_msg(this)"/>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </body>
+  </div>
+</html>

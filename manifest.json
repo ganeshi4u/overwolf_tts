@@ -1,0 +1,65 @@
+{
+	"manifest_version":1,
+	"type":"WebApp",
+	"meta":{
+		"name":"Demo App",
+		"version":"1.0.0",
+		"minimum-overwolf-version":"0.77.10",
+		"author":"Developer Name",
+		"icon":"assets/IconMouseOver.png",
+		"icon_gray":"assets/IconMouseNormal.png",
+		"description":"A simple app that provides a chat window for pubg and narrates the entered text through the specified audio output device"
+	},
+	"permissions": [
+		"Hotkeys",
+		"Media",
+		"Microphone",
+		"Logging"
+	],
+	"data": {
+		"game_targeting": {
+			"type": "all"
+		},
+		"launch_events": [{
+			"event": "AllGamesLaunch",
+			"event_data": {
+				"game_ids": []
+			},
+			"start_minimized": true
+		}],
+		"hotkeys": {
+			"enable_chat_window": {
+			  "title": "Show In-Game Window",
+			  "action-type": "toggle",
+			  "default": "Ctrl+Y"
+			}
+		},
+		"start_window":"ChatWindow",
+		"windows":{
+			"ChatWindow":{
+				"file":"windows/index.html",
+				"show_in_taskbar": true,
+				"resizable": false,
+				"transparent": true,
+				"grab_keyboard_focus": true,
+				"top_most": true,
+				"keep_window_location": true,
+				"disable_blur": true,
+				"clickthrough": false,
+				"disable_rightclick": true,
+				"start_minimized": false,
+				"mute": false,
+				"focus_game_takeover": "ReleaseOnHidden",
+				"focus_game_takeover_release_hotkey": "enable_chat_window",
+				"size": {
+					"width": 100,
+					"height": 100
+				},
+				  "min_size": {
+					"width": 100,
+					"height": 100
+				}
+			}
+		}
+	}
+}
