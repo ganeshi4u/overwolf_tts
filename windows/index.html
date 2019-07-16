@@ -1,26 +1,26 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-      <script src="../js/chatwindow.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/overwolf.js"></script>
+    <script src="../js/chatwindow.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap-4.min.css" />
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>Demo app</title>
   </head>
 
   <div class="content" onmousedown="dragMove();">
     <body>
       <main>
-        <div class="container ">
+        <div class="container-fluid">
           <div class="chat-log">
             <div class="chat-log__item">
-              <div class="chat-log__message">Yo man</div>
+              <div id="chat_msg" class="chat-log__message"></div>
             </div>
           </div>
         </div>
         <div class="chat-form">
-          <div class="container ">
+          <div class="container-fluid">
             <form class="form-horizontal">
               <div class="row">
                 <div class="col-12">
@@ -29,6 +29,9 @@
               </div>
             </form>
           </div>
+        </div>
+        <div class="container-fluid">
+          <div id="plugin-indicator"></div>
         </div>
       </main>
     </body>

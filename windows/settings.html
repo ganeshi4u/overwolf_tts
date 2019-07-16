@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+    <link rel="stylesheet" href="../css/bootstrap-4.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap-slider.min.css"/>
+    <link rel="stylesheet" href="../css/bootstrap-toggle.min.css"/>
+    <link rel="stylesheet" href="../css/settings.css" />
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap-4.min.js"></script>
+    <script src="../js/bootstrap-slider.min.js"></script>
+    <script src="../js/bootstrap-toggle.min.js"></script>
+    <script src="../js/overwolf.js"></script>
+    <script src="../js/settings.js"></script>
+    <title>Text Narrator Settings</title>
+  </head>
+
+  <body>
+    <div class="content">
+
+      <header onmousedown="dragMove()">
+        <div class="window-controls-group">
+          <button class="window-control" onclick="showHelp()">
+            <svg class="svg-icon-fill">
+              <use xlink:href="../assets/svg/sprite.svg#window-control_support" />
+            </svg>
+          </button>
+
+          <button class="window-control" onclick="minimize()">
+            <svg class="svg-icon-fill">
+              <use xlink:href="../assets/svg/sprite.svg#window-control_minimize" />
+            </svg>
+          </button>
+
+          <button class="window-control" onclick="toggleMaximize()">
+            <input type="checkbox" class="maximize-restore-selector toggle-icons" checked />
+            <svg class="svg-icon-fill svg-icon-restore">
+              <use xlink:href="../assets/svg/sprite.svg#window-control_restore" />
+            </svg>
+            <svg class="svg-icon-fill svg-icon-maximize">
+              <use xlink:href="../assets/svg/sprite.svg#window-control_maximize" />
+            </svg>
+          </button>
+
+          <button class="window-control window-control-close" onclick="closeWindow();">
+            <svg class="svg-icon-fill">
+              <use xlink:href="../assets/svg/sprite.svg#window-control_close" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <form name="narrator_settings" id="narrator_settings">
+          <div class="form-group col-2">
+            <div class="container-fluid">
+              <div class="checkbox">
+                <label for="narrator_toggle">Text Narrator</label>
+                <input id="narrator_toggle" type="checkbox" checked>
+              </div>
+              <input type="hidden" id="hidden_narrator_toggle" name="hidden_narrator_toggle" value="on" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="container-fluid">
+              <label for="narrator_voices">Select narrator voice:</label>
+              <select name="narrator_voices" class="form-control" id="narrator_voices" selected="selected"></select>
+
+              <label for="output_devices">Select output device:</label>
+              <select name="output_devices" class="form-control" id="output_devices" selected="selected"></select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="container-fluid">
+              <label for="speech_rate_slider">Speech Rate:</label>
+              <input id="speech_rate_slider" name="speech_rate_slider" type="text" data-slider-min="-10" data-slider-max="10" data-slider-step="1" data-slider-value="3"/>
+              <span id="CurrentSliderValLabel">Value: <span id="SliderVal">3</span></span>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <input type="button" name="apply" id="apply" class="btn btn-info float-right" value="Apply" />
+            <div id="plugin-indicator"></div>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <div class="resize horizontal top" onmousedown="dragResize('Top');"></div>
+    <div class="resize vertical left" onmousedown="dragResize('Left');"></div>
+    <div class="resize vertical right" onmousedown="dragResize('Right');"></div>
+    <div class="resize horizontal bottom" onmousedown="dragResize('Bottom');"></div>
+
+    <div class="resize corner top-left" onmousedown="dragResize('TopLeft');"></div>
+    <div class="resize corner top-right" onmousedown="dragResize('TopRight');"></div>
+    <div class="resize corner bottom-left" onmousedown="dragResize('BottomLeft');"></div>
+    <div class="resize corner bottom-right" onmousedown="dragResize('BottomRight');"></div>
+  </body>
+</html>

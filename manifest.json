@@ -12,9 +12,8 @@
 	},
 	"permissions": [
 		"Hotkeys",
-		"Media",
-		"Microphone",
-		"Logging"
+		"Logging",
+		"Extensions"
 	],
 	"data": {
 		"game_targeting": {
@@ -34,31 +33,56 @@
 			  "default": "Ctrl+Y"
 			}
 		},
-		"start_window":"ChatWindow",
+		"start_window":"settings",
 		"windows":{
 			"ChatWindow":{
 				"file":"windows/index.html",
-				"show_in_taskbar": true,
+				"in_game_only": true,
+				"show_in_taskbar": false,
 				"resizable": false,
 				"transparent": true,
 				"grab_keyboard_focus": true,
-				"top_most": true,
 				"keep_window_location": true,
 				"disable_blur": true,
-				"clickthrough": false,
+				"clickthrough": true,
 				"disable_rightclick": true,
-				"start_minimized": false,
+				"start_minimized": true,
 				"mute": false,
 				"focus_game_takeover": "ReleaseOnHidden",
 				"focus_game_takeover_release_hotkey": "enable_chat_window",
 				"size": {
-					"width": 100,
-					"height": 100
+					"width": 400,
+					"height": 130
 				},
 				  "min_size": {
-					"width": 100,
-					"height": 100
+					"width": 400,
+					"height": 130
 				}
+			},
+			"settings": {
+				"file":"windows/settings.html",
+				"show_in_taskbar": true,
+				"transparent": true,
+				"resizable": true,
+				"grab_keyboard_focus": false,
+				"disable_rightclick": true,
+				"start_minimized": false,
+				"clickthrough": false,
+				"keep_window_location": true,
+				"size": {
+					"width":700,
+					"height":400
+					},
+				"min_size": {
+					"width":400,
+					"height":400
+				}
+			}
+		},
+		"extra-objects": {
+			"overwolf-plugin-tts": {
+				"file": "OverwolfPluginTTS.dll",
+				"class": "OverwolfPluginTTS.GenerateSpeech"
 			}
 		}
 	}

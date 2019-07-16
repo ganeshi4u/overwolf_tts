@@ -6,7 +6,39 @@ function dragMove(){
     });
 };
 
-async function send_msg(msg) {
+var TTSPlugin = new OverwolfPlugin("overwolf-plugin-tts", true);
+TTSPlugin.initialize(function(status) {
+    if (status == false) {
+        $('#plugin-indicator').append('<span class="badge badge-pill badge-danger">plugin</span>');
+        return;
+    }
+
+    $('#plugin-indicator').append('<span class="badge badge-pill badge-success">plugin</span>');
+});
+
+function send_msg(msg) {
+    if (event.key === 'Enter') {
+        if (msg.value === '.settings') {
+            overwolf.windows.obtainDeclaredWindow("settings", function(result){
+                if (result.status == "success"){
+                    overwolf.windows.restore(result.window.id, function(result){
+                        console.log(result);
+                    });
+                }
+            });
+        } else {
+            TTSPlugin.get().convertText(msg.value, function(status) {
+                if (status) {
+                    document.querySelector('#chat_msg').innerText = msg.value;
+                } else {
+                    $('#plugin-indicator').append('<span class="badge badge-pill badge-success">narrator off</span>');
+                }
+            });
+        }
+    }
+};
+
+/*async function send_msg(msg) {
     if(event.key === 'Enter') {
         // audio device setup
         //const devices = await navigator.mediaDevices.enumerateDevices();
@@ -31,4 +63,4 @@ async function send_msg(msg) {
           
         speechSynthesis.speak(tts);
     }
-}
+}*/
