@@ -2,10 +2,10 @@
 	"manifest_version":1,
 	"type":"WebApp",
 	"meta":{
-		"name":"Demo App",
+		"name":"InGame Narrator",
 		"version":"1.0.0",
 		"minimum-overwolf-version":"0.77.10",
-		"author":"Developer Name",
+		"author":"ganesh varma",
 		"icon":"assets/IconMouseOver.png",
 		"icon_gray":"assets/IconMouseNormal.png",
 		"description":"A simple app that provides a chat window for pubg and narrates the entered text through the specified audio output device"
@@ -33,18 +33,18 @@
 			  "default": "Ctrl+Y"
 			}
 		},
-		"start_window":"settings",
+		"start_window":"ChatWindow",
 		"windows":{
 			"ChatWindow":{
 				"file":"windows/index.html",
-				"in_game_only": true,
+				"in_game_only": false,
 				"show_in_taskbar": false,
 				"resizable": false,
 				"transparent": true,
 				"grab_keyboard_focus": true,
 				"keep_window_location": true,
 				"disable_blur": true,
-				"clickthrough": true,
+				"clickthrough": false,
 				"disable_rightclick": true,
 				"start_minimized": true,
 				"mute": false,

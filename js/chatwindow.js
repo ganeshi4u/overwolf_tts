@@ -8,7 +8,7 @@ function dragMove(){
 
 var TTSPlugin = new OverwolfPlugin("overwolf-plugin-tts", true);
 TTSPlugin.initialize(function(status) {
-    if (status == false) {
+    if (!status) {
         $('#plugin-indicator').append('<span class="badge badge-pill badge-danger">plugin</span>');
         return;
     }
@@ -35,7 +35,9 @@ function send_msg(msg) {
                 }
             });
         }
+        $('#msg').val('');
     }
+    //return;
 };
 
 /*async function send_msg(msg) {

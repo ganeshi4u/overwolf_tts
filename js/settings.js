@@ -27,7 +27,7 @@ $(window).on("load", function(){
         if (status) {
             var len = data.length;
             for (var i=0; i < len; i++) {
-                $("select#narrator_voices").append( $("<option>")
+                $("select#narrator_voice").append( $("<option>")
                 .val(data[i])
                 .html(data[i])
                 ); 
@@ -39,7 +39,7 @@ $(window).on("load", function(){
         if (status) {
             var len = deviceNames.length;
             for (var i=0; i < len; i++) {
-                $("select#output_devices").append( $("<option>")
+                $("select#output_device").append( $("<option>")
                 .val(deviceIds[i])
                 .html(deviceNames[i])
                 ); 
@@ -47,20 +47,27 @@ $(window).on("load", function(){
         }
     });
 
-    var mySlider = $("#speech_rate_slider").slider();
-    mySlider.on("slide", function(slideEvt) {
-        $("#SliderVal").text(slideEvt.value);
+    var mySpeechRateSlider = $("#speech_rate_slider").slider();
+    mySpeechRateSlider.on("slide", function(slideEvt) {
+        $("#SpeechRateSliderVal").text(slideEvt.value);
     });
 
-    TTSPlugin.get().getNarratorSettings(function(narrator_toggle, speechRate, outputDevice, speechVoice) {
-        $('#narrator_toggle').bootstrapToggle(narrator_toggle);
-        $('#narrator_voices').val(speechVoice);
-        $('#output_devices').val(outputDevice);
-        mySlider.slider('setValue', speechRate);
-        $("#SliderVal").text(speechRate);
+    var myVolumeSlider = $("#narrator_volume_slider").slider();
+    myVolumeSlider.on("slide", function(slideEvt) {
+        $("#VolumeSliderVal").text(slideEvt.value);
     });
 
-    $('body').on('click', '#apply', function(status){
+    TTSPlugin.get().getNarratorSettings(function(settings) {
+        $('#narrator_toggle').bootstrapToggle(settings[0]);
+        $('#narrator_voice').val(settings[1]);
+        $('#output_device').val(settings[2]);
+        mySpeechRateSlider.slider('setValue', settings[3]);
+        $("#SpeechRateSliderVal").text(settings[3]);
+        myVolumeSlider.slider('setValue', settings[4]);
+        $("#VolumeSliderVal").text(settings[4]);
+    });
+
+    $('body').on('click', '#apply', function(){
         var settings = $('#narrator_settings').serialize();
         TTSPlugin.get().updateNarratorSettings(settings, function(status) {
             if (status) {

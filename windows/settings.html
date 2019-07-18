@@ -67,11 +67,11 @@
 
           <div class="form-group">
             <div class="container-fluid">
-              <label for="narrator_voices">Select narrator voice:</label>
-              <select name="narrator_voices" class="form-control" id="narrator_voices" selected="selected"></select>
+              <label for="narrator_voice">Select narrator voice:</label>
+              <select name="narrator_voice" class="form-control" id="narrator_voice" selected="selected"></select>
 
-              <label for="output_devices">Select output device:</label>
-              <select name="output_devices" class="form-control" id="output_devices" selected="selected"></select>
+              <label for="output_device">Select output device:</label>
+              <select name="output_device" class="form-control" id="output_device" selected="selected"></select>
             </div>
           </div>
 
@@ -79,7 +79,15 @@
             <div class="container-fluid">
               <label for="speech_rate_slider">Speech Rate:</label>
               <input id="speech_rate_slider" name="speech_rate_slider" type="text" data-slider-min="-10" data-slider-max="10" data-slider-step="1" data-slider-value="3"/>
-              <span id="CurrentSliderValLabel">Value: <span id="SliderVal">3</span></span>
+              <span id="SpeechRateSliderValLabel">Value: <span id="SpeechRateSliderVal">3</span></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="container-fluid">
+              <label for="narrator_volume_slider">Narrator Volume:</label>
+              <input id="narrator_volume_slider" name="narrator_volume_slider" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="5" data-slider-value="50"/>
+              <span id="VolumeSliderValLabel">Value: <span id="VolumeSliderVal">50</span></span>
             </div>
           </div>
 
