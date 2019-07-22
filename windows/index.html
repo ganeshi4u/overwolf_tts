@@ -9,29 +9,29 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   </head>
 
-  <div class="content" onmousedown="dragMove();">
     <body>
       <main>
-        <div class="container-fluid">
-          <div class="chat-log">
-            <div class="chat-log__item">
-              <div id="chat_msg" class="chat-log__message"></div>
+        <div class="content" id="content" onmousedown="dragMove();">
+          <div class="container-fluid">
+            <div class="chat-log">
+              <div class="chat-log__item">
+                <div id="chat_msg" class="chat-log__message"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="chat-form">
-          <div class="container-fluid">            
-            <div class="row">
-              <div class="col-12">
-                <input type="text" class="form-control" id="msg" placeholder="Message" onkeydown="send_msg(this)"/>
-              </div>
-            </div>            
+          <div class="chat-form">
+            <div class="container-fluid">            
+              <div class="row">
+                <div class="col-12">
+                  <input type="text" class="form-control" id="msg" placeholder="Message" onkeydown="send_msg(this)"/>
+                </div>
+              </div>            
+            </div>
           </div>
-        </div>
-        <div class="container-fluid">
-          <div id="plugin-indicator"></div>
+          <div class="container-fluid">
+            <div id="plugin-indicator"></div>
+          </div>
         </div>
       </main>
     </body>
-  </div>
 </html>

@@ -1,3 +1,7 @@
+function reload() {
+    location.reload(true);
+}
+
 var TTSPlugin = new OverwolfPlugin("overwolf-plugin-tts", true);
 TTSPlugin.initialize(function(status) {
     if (status == false) {
@@ -8,7 +12,7 @@ TTSPlugin.initialize(function(status) {
     $('#plugin-indicator').append('<span class="badge badge-pill badge-success">plugin</span>');
 });
 
-$(window).on("load", function(){
+$(document).ready(function(){
     $('#narrator_toggle').bootstrapToggle({
         on: 'ON',
         off: 'OFF',

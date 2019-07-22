@@ -13,6 +13,10 @@ html, body {
     background-color: transparent !important;
 }
 
+.content {
+    background-color: #969696;
+}
+
 body {
     font-family: "KlavikaWebBasicRegular", sans-serif;
     font-size: 16px;

@@ -14,6 +14,7 @@ TTSPlugin.initialize(function(status) {
     }
 
     $('#plugin-indicator').append('<span class="badge badge-pill badge-success">plugin</span>');
+    $('#msg').focus();
 });
 
 function send_msg(msg) {
@@ -26,18 +27,14 @@ function send_msg(msg) {
                     });
                 }
             });
+        } else if (msg.value.split(' ')[0] === '.setop') {
+            document.getElementById("content").style.opacity = msg.value.split(' ')[1];
         } else {
-            TTSPlugin.get().convertText(msg.value, function(status) {
-                if (status) {
-                    document.querySelector('#chat_msg').innerText = msg.value;
-                } else {
-                    $('#plugin-indicator').append('<span class="badge badge-pill badge-success">narrator off</span>');
-                }
-            });
+            TTSPlugin.get().convertText(msg.value);
+            document.querySelector('#chat_msg').innerText = msg.value;
         }
         $('#msg').val('');
     }
-    //return;
 };
 
 /*async function send_msg(msg) {
